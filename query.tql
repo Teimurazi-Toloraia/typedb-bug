@@ -1,0 +1,8 @@
+match
+$p isa person, has firstname "Teimurazi", has lastname "Toloraia";
+$friendship(person1: $p, person2: $friend) isa friendship;
+$first_visit(person: $p, destination: $t) isa visited, has start_date $s1, has end_date $e1;
+$second_visit(person: $friend, destination: $t) isa visited, has start_date $s2, has end_date $e2;
+$s1 <= $e2;
+$s2 <= $e1;
+get $friend, $t; count;
